@@ -1,8 +1,9 @@
+import Navbar from "./Navbar";
 
 const Sidebar = () => {
     return (
-        <div>
-            sidebar
+        <div className="sidebar">
+             <Navbar />
         </div>
     );
 };
