@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { FcAddImage } from "react-icons/fc";
+import Add from "../img/addAvatar.png";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
@@ -67,10 +67,10 @@ const Register = () => {
                 <form onSubmit={handleSubmit}>
                     <input required type="text" placeholder="display name" />
                     <input required type="email" placeholder="email" />
-                    <input required type="password" placeholder="password" />
+                    <input required type="password" placeholder="password" autoComplete="on"/>
                     <input required style={{ display: "none" }} type="file" id="file" />
                     <label htmlFor="file">
-                        <FcAddImage />
+                    <img src={Add} alt="" />
                         <span>Add an avatar</span>
                     </label>
                     <button disabled={loading}>Sign up</button>
